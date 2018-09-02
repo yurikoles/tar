@@ -3713,7 +3713,9 @@ only attributes from the user namespace.
 @itemx -J
 Use @command{xz} for compressing or decompressing the archives.  @xref{gzip}.
 
+@opsummary{zstd}
 @item --zstd
+@itemx -D
 Use @command{zstd} for compressing or decompressing the archives.  @xref{gzip}.
 
 @end table
@@ -3732,6 +3734,8 @@ them with the equivalent long option.
 @item -B @tab @ref{--read-full-records}.
 
 @item -C @tab @ref{--directory}.
+
+@item -D @tab @ref{--zstd}.
 
 @item -F @tab @ref{--info-script}.
 
@@ -9527,7 +9531,7 @@ switch to @samp{posix}.
 @GNUTAR{} is able to create and read compressed archives.  It supports
 a wide variety of compression programs, namely: @command{gzip},
 @command{bzip2}, @command{lzip}, @command{lzma}, @command{lzop},
-@command{xz} and traditional @command{compress}. The latter is
+@command{xz}, @command{zstd} and traditional @command{compress}. The latter is
 supported mostly for backward compatibility, and we recommend
 against using it, because it is by far less effective than the other
 compression programs@footnote{It also had patent problems in the past.}.
@@ -9545,7 +9549,7 @@ table below:
 @item @option{--lzip}     @tab             @tab @command{lzip}
 @item @option{--lzma}     @tab             @tab @command{lzma}
 @item @option{--lzop}     @tab             @tab @command{lzop}
-@item @option{--zstd}     @tab             @tab @command{zstd}
+@item @option{--zstd}     @tab @option{-D} @tab @command{zstd}
 @item @option{--compress} @tab @option{-Z} @tab @command{compress}
 @end multitable
 
@@ -9668,6 +9672,11 @@ Filter the archive through @command{lzma}.
 @opindex lzop
 @item --lzop
 Filter the archive through @command{lzop}.
+
+@opindex zstd
+@item -D
+@itemx --zstd
+Filter the archive through @command{zstd}.
 
 @opindex compress
 @opindex uncompress

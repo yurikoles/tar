@@ -328,6 +328,7 @@ static struct zip_program zip_program[] = {
   { ct_lzop,     LZOP_PROGRAM,     "--lzop" },
   { ct_xz,       XZ_PROGRAM,       "-J" },
   { ct_zstd,     ZSTD_PROGRAM,     "--zstd" },
+  { ct_zstd,     ZSTD_PROGRAM,     "-D" },
   { ct_none }
 };
 
